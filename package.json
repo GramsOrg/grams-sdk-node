@@ -1,0 +1,22 @@
+{
+  "name": "grams-sdk-node",
+  "version": "1.0.0",
+  "description": "The official npm package for interacting the the grams network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Warn: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GramsOrg/grams-sdk-node.git"
+  },
+  "publishConfig": {
+    "@GramsOrg:registry": "https://npm.pkg.github.com"
+  },
+  "author": "Grams Org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GramsOrg/grams-sdk-node/issues"
+  },
+  "homepage": "https://github.com/GramsOrg/grams-sdk-node#readme"
+}
