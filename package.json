@@ -1,5 +1,5 @@
 {
-  "name": "grams-sdk-node",
+  "name": "grams-sdk",
   "version": "1.0.0",
   "description": "The official npm package for interacting the the grams network",
   "main": "index.js",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/GramsOrg/grams-sdk-node/issues"
   },
-  "homepage": "https://github.com/GramsOrg/grams-sdk-node#readme"
+  "homepage": "https://github.com/GramsOrg/grams-sdk-node#readme",
+  "dependencies": {
+    "@iota/wallet": "^2.0.3-rc.19"
+  }
 }
