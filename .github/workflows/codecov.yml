@@ -1,4 +1,4 @@
-name: Deploy to NPM
+name: Run Codecov
 'on':
   push:
     branches:
