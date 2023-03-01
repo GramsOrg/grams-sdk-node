@@ -27,7 +27,13 @@ Refer to github pages for more details
 To build the package, run:
 
 ```
-npm run build
+npm run build:prod
+```
+
+For windows:
+
+```
+npm run build:prod:windows
 ```
 
 This will compile the TypeScript source code to JavaScript and place it in the dist directory.
