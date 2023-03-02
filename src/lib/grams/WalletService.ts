@@ -1,24 +1,15 @@
-import WalletService from "../lib/grams/WalletService";
-import { Address, Balance, IWallet, Transaction, TransactionOptions, WalletMeta } from "../types";
+import { Address, Balance, IWallet, Transaction, TransactionOptions, WalletMeta } from "../../types";
 
-class Wallet implements IWallet {
-
-    private service: IWallet;
-
-    /**
-     * The profile's metadata.
-     */
+class WalletService implements IWallet {
     meta: WalletMeta;
 
     /**
      * Creates an empty profile with a given name.
      *
      * @param name - The profile name.
-     * @param service - This provides developers the possibility of extending the Profile class with their own implementation. Defaults to Grams
      */
-    constructor(meta: WalletMeta, service?: IWallet) {
+    constructor(meta: WalletMeta) {
         this.meta = meta;
-        this.service = service || new WalletService(meta);
     }
     getBalance(): Promise<Balance> {
         throw new Error("Method not implemented.");
@@ -43,4 +34,4 @@ class Wallet implements IWallet {
     }
 }
 
-export default Wallet;
+export default WalletService;
