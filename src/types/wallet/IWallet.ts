@@ -2,7 +2,8 @@ import {
     Address,
     Balance,
     Transaction,
-    TransactionOptions
+    TransactionOptions,
+    WalletOptions
 } from "../";
 
 /**
@@ -31,6 +32,15 @@ export interface IWallet {
      * The metadata of a wallet.
      */
     meta: WalletMeta;
+
+    /**
+     * Creates a new Grams wallet.
+     * 
+     * @param options - An object containing options for creating the wallet.
+     * @returns A promise that resolves to a `Wallet` object representing the newly created wallet.
+     */
+    create(options: WalletOptions): Promise<IWallet>;
+  
 
     /**
      * Gets the balance of the wallet.

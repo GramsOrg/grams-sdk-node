@@ -1,5 +1,5 @@
 import WalletService from "../lib/grams/WalletService";
-import { Address, Balance, IWallet, Transaction, TransactionOptions, WalletMeta } from "../types";
+import { Address, Balance, IWallet, Transaction, TransactionOptions, WalletMeta, WalletOptions } from "../types";
 
 /**
  * A Grams wallet, which holds the user's address and balance.
@@ -31,6 +31,16 @@ class Wallet implements IWallet {
     constructor(meta: WalletMeta, service?: IWallet) {
         this.meta = meta;
         this.service = service || new WalletService(meta);
+    }
+
+    /**
+     * Creates a new Grams wallet.
+     * 
+     * @param options - An object containing options for creating the wallet.
+     * @returns A promise that resolves to a `Wallet` object representing the newly created wallet.
+     */
+    create(options: WalletOptions): Promise<IWallet> {
+        return this.service.create(options);
     }
 
     /**

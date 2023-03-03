@@ -62,7 +62,7 @@ class Profile implements IProfile {
      *  // Do boring stuff :/
      * });
      */
-    createProfile(options: ProfileOptions): Promise<void> {
+    createProfile(options: ProfileOptions): Promise<string> {
         return this.service.createProfile(options);
     }
 
@@ -82,8 +82,8 @@ class Profile implements IProfile {
      *  // Do boring stuff :/
      * });
      */
-    unlock(password: string): Promise<void> {
-        return this.service.unlock(password);
+    unlock(options: ProfileOptions): Promise<void> {
+        return this.service.unlock(options);
     }
 
     /**

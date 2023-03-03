@@ -31,14 +31,14 @@ export interface IProfile {
      *
      * @param options - The options to use when creating the profile.
      */
-    createProfile(options: ProfileOptions): Promise<void>;
+    createProfile(options: ProfileOptions): Promise<string>;
 
     /**
      * Unlocks the profile with the given password.
      *
      * @param password - The password to use to unlock the profile.
      */
-    unlock(password: string): Promise<void>;
+    unlock(options: ProfileOptions): Promise<void>;
 
     /**
      * Creates a new wallet with the given name and stores it in this profile.

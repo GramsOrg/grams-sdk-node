@@ -1,4 +1,12 @@
-import { Address, Balance, IWallet, Transaction, TransactionOptions, WalletMeta } from "../../types";
+import {
+    Address,
+    Balance,
+    IWallet,
+    Transaction,
+    TransactionOptions,
+    WalletMeta,
+    WalletOptions
+} from "../../types";
 
 class WalletService implements IWallet {
     meta: WalletMeta;
@@ -11,6 +19,11 @@ class WalletService implements IWallet {
     constructor(meta: WalletMeta) {
         this.meta = meta;
     }
+    
+    create(options: WalletOptions): Promise<IWallet> {
+        throw new Error("Method not implemented.");
+    }
+
     getBalance(): Promise<Balance> {
         throw new Error("Method not implemented.");
     }
