@@ -13,14 +13,16 @@ class ProfileService implements IProfile {
   meta: ProfileMeta;
 
   private accountManager?: AccountManager;
-  private identity?: IIdentity;
-  private wallet?: WalletService;
+  private identities: Map<string, IIdentity>;
+  private wallets: Map<string, WalletService>;
 
-  constructor(meta: ProfileMeta, walletService?: IWallet) {
+  constructor(meta: ProfileMeta) {
     this.meta = meta;
+    this.identities = new Map();
+    this.wallets = new Map();
   }
 
-  async createProfile(options: ProfileOptions): Promise<string> {
+  async create(options: ProfileOptions): Promise<string> {
     this.accountManager = new AccountManager(this.managerOptions(options));
 
     let mnemonic = options.mnemonic;
@@ -38,20 +40,30 @@ class ProfileService implements IProfile {
     return Promise.resolve();
   }
 
-  createWallet(name: string): Promise<IWallet> {
+  wallet(name: string): Promise<IWallet> {
     if (!this.accountManager) {
-      throw new GramsError(`Profile ${this.meta.name} is not created yet. Create a new profile to create a wallet`);
+      throw new GramsError(`Profile ${this.meta.name} not ready. Please unlock the profile or create it first.`);
     }
 
-    this.wallet = new WalletService({
-      name,
-    });
-    return this.wallet.create({
+    let current = this.wallets?.get(name);
+
+    if (current) {
+        return Promise.resolve(current);
+    }
+
+    current = new WalletService({ name });
+    
+    return current
+    .create({
       accountManager: this.accountManager,
+    })
+    .then(created => {
+        this.wallets.set(name, created);
+        return created;
     });
   }
 
-  createIdentity(name: string): Promise<IIdentity> {
+  identity(name: string): Promise<IIdentity> {
     throw new Error('Method not implemented.');
   }
 

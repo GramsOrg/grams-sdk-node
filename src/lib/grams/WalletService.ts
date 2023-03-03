@@ -15,11 +15,12 @@ export interface GramsWalletOptions extends WalletOptions {
 }
 
 class WalletService implements IWallet {
+
   meta: WalletMeta;
 
-  account?: Account;
+  private account?: Account;
 
-  address?: Address;
+  private accountAddress?: Address;
 
   constructor(meta: WalletMeta) {
     this.meta = meta;
@@ -34,12 +35,12 @@ class WalletService implements IWallet {
       })
       .then((account) => account.generateAddress())
       .then((address) => {
-        this.address = address;
+        this.accountAddress = address;
         return this;
       });
   }
 
-  getBalance(): Promise<Balance> {
+  balance(): Promise<Balance> {
     if (!this.account) {
       throw new GramsError('Wallet not initialized, create the wallet to be able to get the balance');
     }
@@ -52,20 +53,20 @@ class WalletService implements IWallet {
     });
   }
 
-  getAddress(): Promise<Address> {
-    if (!this.address) {
+  address(): Promise<Address> {
+    if (!this.accountAddress) {
       throw new GramsError('Wallet not initialized, create the wallet to be able to get the balance');
     }
 
-    return Promise.resolve(this.address);
+    return Promise.resolve(this.accountAddress);
   }
-  sendTransaction(transaction: Transaction): Promise<void> {
+  send(transaction: Transaction): Promise<void> {
     throw new Error('Method not implemented.');
   }
-  getTransaction(id: string): Promise<Transaction> {
+  transaction(id: string): Promise<Transaction> {
     throw new Error('Method not implemented.');
   }
-  getTransactions(options: TransactionOptions): Promise<Transaction[]> {
+  transactions(options: TransactionOptions): Promise<Transaction[]> {
     throw new Error('Method not implemented.');
   }
   onTransaction(listener: (transaction: Transaction) => void): void {

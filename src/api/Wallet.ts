@@ -47,7 +47,7 @@ class Wallet implements IWallet {
    *
    * @example
    * wallet
-   * .getBalance()
+   * .balance()
    * .then(balance => {
    *  console.log('Wallet balance:', balance.available);
    *  // Wallet balance: 1000
@@ -58,8 +58,8 @@ class Wallet implements IWallet {
    * });
    *
    */
-  getBalance(): Promise<Balance> {
-    return this.service.getBalance();
+  balance(): Promise<Balance> {
+    return this.service.balance();
   }
 
   /**
@@ -67,7 +67,7 @@ class Wallet implements IWallet {
    * @returns A Promise that resolves to an Address object.
    * @example
    * wallet
-   * .getAddress()
+   * .address()
    * .then(address => {
    *  console.log(address.toString());
    *  // "0x1234567890ABCDEF"
@@ -77,8 +77,8 @@ class Wallet implements IWallet {
    *  // Do boring stuff :/
    * });
    */
-  getAddress(): Promise<Address> {
-    return this.service.getAddress();
+  address(): Promise<Address> {
+    return this.service.address();
   }
 
   /**
@@ -88,7 +88,7 @@ class Wallet implements IWallet {
    * @example
    * const tx = new Transaction("0x1234567890CDF...", "0x98765432EDCBA...", 1000);
    * wallet
-   * .sendTransaction(tx)
+   * .send(tx)
    * then(() => {
    *  // Do awesome stuff!
    * })
@@ -97,8 +97,8 @@ class Wallet implements IWallet {
    *  // Do boring stuff :/
    * });
    */
-  sendTransaction(transaction: Transaction): Promise<void> {
-    return this.service.sendTransaction(transaction);
+  send(transaction: Transaction): Promise<void> {
+    return this.service.send(transaction);
   }
 
   /**
@@ -108,7 +108,7 @@ class Wallet implements IWallet {
    * @example
    * const txId = "0x1234567890ABCDEF";
    * wallet
-   * .getTransaction(txId)
+   * .transaction(txId)
    * .then(tx => {
    *  console.log(tx.amount);
    *  // 1000
@@ -118,8 +118,8 @@ class Wallet implements IWallet {
    *  // Do boring stuff :/
    * });
    */
-  getTransaction(id: string): Promise<Transaction> {
-    return this.service.getTransaction(id);
+  transaction(id: string): Promise<Transaction> {
+    return this.service.transaction(id);
   }
 
   /**
@@ -133,7 +133,7 @@ class Wallet implements IWallet {
    *  minAmount: 1000
    * };
    * wallet
-   * .getTransactions(options)
+   * .transactions(options)
    * then(txs => {
    *  console.log(txs.length);
    *  // 5
@@ -143,8 +143,8 @@ class Wallet implements IWallet {
    *  // Do boring stuff :/
    * });
    */
-  getTransactions(options: TransactionOptions): Promise<Transaction[]> {
-    return this.service.getTransactions(options);
+  transactions(options: TransactionOptions): Promise<Transaction[]> {
+    return this.service.transactions(options);
   }
 
   /**

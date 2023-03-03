@@ -38,14 +38,14 @@ export interface IWallet {
    *
    * @returns A promise that resolves to a Balance object representing the balance of the wallet.
    */
-  getBalance(): Promise<Balance>;
+  balance(): Promise<Balance>;
 
   /**
    * Gets the address of the wallet.
    *
    * @returns A promise that resolves to an `Address` object representing the address of the wallet.
    */
-  getAddress(): Promise<Address>;
+  address(): Promise<Address>;
 
   /**
    * Sends a transaction from the wallet.
@@ -53,7 +53,7 @@ export interface IWallet {
    * @param transaction - The `Transaction` object representing the transaction to send.
    * @returns A promise that resolves once the transaction has been sent.
    */
-  sendTransaction(transaction: Transaction): Promise<void>;
+  send(transaction: Transaction): Promise<void>;
 
   /**
    * Gets a transaction by its ID.
@@ -61,7 +61,7 @@ export interface IWallet {
    * @param id - The ID of the transaction to retrieve.
    * @returns A promise that resolves to a `Transaction` object representing the transaction with the given ID.
    */
-  getTransaction(id: string): Promise<Transaction>;
+  transaction(id: string): Promise<Transaction>;
 
   /**
    * Gets an array of transactions that match the given criteria.
@@ -69,7 +69,7 @@ export interface IWallet {
    * @param options - An object containing options to filter and sort the transactions.
    * @returns A promise that resolves to an array of `Transaction` objects.
    */
-  getTransactions(options: TransactionOptions): Promise<Transaction[]>;
+  transactions(options: TransactionOptions): Promise<Transaction[]>;
 
   /**
    * Registers a listener function to be called whenever a transaction is received by the wallet.

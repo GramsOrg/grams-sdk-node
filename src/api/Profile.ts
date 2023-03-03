@@ -55,8 +55,8 @@ class Profile implements IProfile {
    *  // Do boring stuff :/
    * });
    */
-  createProfile(options: ProfileOptions): Promise<string> {
-    return this.service.createProfile(options);
+  create(options: ProfileOptions): Promise<string> {
+    return this.service.create(options);
   }
 
   /**
@@ -80,15 +80,13 @@ class Profile implements IProfile {
   }
 
   /**
-   * Creates a new wallet with the given name and stores it in this profile.
+   * Creates a new or returns an existing wallet with the given name and stores it in this profile.
    *
    * @param name - The name to use for the new wallet.
    *
    * @example
-   * import { Wallet } from "grams-sdk";
-   *
    * profile
-   * .createWallet("myWallet")
+   * .wallet("myWallet")
    * .then(wallet => {
    *  console.log('Created new wallet:', wallet.meta.name);
    *  // Created new wallet: myWallet
@@ -100,8 +98,8 @@ class Profile implements IProfile {
    *  // Do boring stuff :/
    * });
    */
-  createWallet(name: string): Promise<IWallet> {
-    return this.service.createWallet(name);
+  wallet(name: string): Promise<IWallet> {
+    return this.service.wallet(name);
   }
 
   /**
@@ -121,8 +119,8 @@ class Profile implements IProfile {
    *  // Do boring stuff :/
    * });
    */
-  createIdentity(name: string): Promise<IIdentity> {
-    return this.service.createIdentity(name);
+  identity(name: string): Promise<IIdentity> {
+    return this.service.identity(name);
   }
 
   /**

@@ -25,7 +25,7 @@ export interface IProfile {
    *
    * @param options - The options to use when creating the profile.
    */
-  createProfile(options: ProfileOptions): Promise<string>;
+  create(options: ProfileOptions): Promise<string>;
 
   /**
    * Unlocks the profile with the given password.
@@ -39,14 +39,14 @@ export interface IProfile {
    *
    * @param name - The name to use for the new wallet.
    */
-  createWallet(name: string): Promise<IWallet>;
+  wallet(name: string): Promise<IWallet>;
 
   /**
    * Creates a new identity with the given name and stores it in this profile.
    *
    * @param name - The name to use for the new wallet.
    */
-  createIdentity(name: string): Promise<IIdentity>;
+  identity(name: string): Promise<IIdentity>;
 
   /**
    * Changes the password for this profile.
