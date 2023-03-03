@@ -14,9 +14,13 @@
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">grams-sdk</a></li>
 <li><a href="Profile.html">Profile</a></li></ul>
-<h1>Class Profile</h1></div>
+<h1>Class Profile<code class="tsd-tag ts-flagAlpha">Alpha</code> </h1></div>
 <section class="tsd-panel tsd-comment">
 <div class="tsd-comment tsd-typography"><p>A Grams profile, which holds the user&#39;s identity, wallets, and other information.</p>
+<p>Use it by importing it directly from grams-sdk</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Profile</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&#39;grams-sdk&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">// Create a new profile with a given name</span><br/><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">profileMeta</span><span class="hl-1"> = { </span><span class="hl-0">name:</span><span class="hl-1"> </span><span class="hl-3">&quot;myName&quot;</span><span class="hl-1"> };</span><br/><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">profile</span><span class="hl-1"> = </span><span class="hl-6">new</span><span class="hl-1"> </span><span class="hl-8">Profile</span><span class="hl-1">(</span><span class="hl-0">profileMeta</span><span class="hl-1">);</span>
+</code></pre>
 </div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
@@ -27,7 +31,7 @@
 <ul class="tsd-hierarchy">
 <li><a href="../interfaces/IProfile.html" class="tsd-signature-type" data-tsd-kind="Interface">IProfile</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L17">api/Profile.ts:17</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L28">src/api/Profile.ts:28</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -72,7 +76,7 @@
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Profile.html" class="tsd-signature-type" data-tsd-kind="Class">Profile</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L32">api/Profile.ts:32</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L43">src/api/Profile.ts:43</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="meta" class="tsd-anchor"></a>
@@ -82,12 +86,12 @@
 </div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/IProfile.html">IProfile</a>.<a href="../interfaces/IProfile.html#meta">meta</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L24">api/Profile.ts:24</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L35">src/api/Profile.ts:35</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="service" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>service</span><a href="#service" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">service<span class="tsd-signature-symbol">:</span> <a href="../interfaces/IProfile.html" class="tsd-signature-type" data-tsd-kind="Interface">IProfile</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L19">api/Profile.ts:19</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L30">src/api/Profile.ts:30</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="backup" class="tsd-anchor"></a>
@@ -95,7 +99,10 @@
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="backup.backup-1">backup<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#backup.backup-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Backs up this profile to the given file path and password.</p>
+<div class="tsd-comment tsd-typography"><p>Backs up this profile to the given file path after verifying the password.</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-0">profile</span><br/><span class="hl-1">.</span><span class="hl-8">backup</span><span class="hl-1">(</span><span class="hl-3">&quot;/path/to/backup&quot;</span><span class="hl-1">, </span><span class="hl-3">&quot;password&quot;</span><span class="hl-1">)</span><br/><span class="hl-1">.</span><span class="hl-8">then</span><span class="hl-1">(() </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-4">// Do awesome stuff!</span><br/><span class="hl-1">})</span><br/><span class="hl-1">.</span><span class="hl-8">catch</span><span class="hl-1">(</span><span class="hl-0">err</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">error</span><span class="hl-1">(</span><span class="hl-3">&#39;Error backing up profile:&#39;</span><span class="hl-1">, </span><span class="hl-0">err</span><span class="hl-1">)</span><br/><span class="hl-1"> </span><span class="hl-4">// Do boring stuff :/</span><br/><span class="hl-1">});</span>
+</code></pre>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -106,18 +113,21 @@
 </div></li>
 <li>
 <h5>password: <span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>The password to use to encrypt the backup.</p>
+<div class="tsd-comment tsd-typography"><p>The profile&#39;s password that will also be used to encrypt the backup.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/IProfile.html">IProfile</a>.<a href="../interfaces/IProfile.html#backup">backup</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L89">api/Profile.ts:89</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L173">src/api/Profile.ts:173</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="changePassword" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>change<wbr/>Password</span><a href="#changePassword" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="changePassword.changePassword-1">change<wbr/>Password<span class="tsd-signature-symbol">(</span>oldPassword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newPassword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#changePassword.changePassword-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Changes the password for this profile.</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-0">profile</span><br/><span class="hl-1">.</span><span class="hl-8">changePassword</span><span class="hl-1">(</span><span class="hl-3">&quot;oldPassword&quot;</span><span class="hl-1">, </span><span class="hl-3">&quot;newPassword&quot;</span><span class="hl-1">)</span><br/><span class="hl-1">.</span><span class="hl-8">then</span><span class="hl-1">(() </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-4">// Do awesome stuff!</span><br/><span class="hl-1">})</span><br/><span class="hl-1">.</span><span class="hl-8">catch</span><span class="hl-1">(</span><span class="hl-0">err</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">error</span><span class="hl-1">(</span><span class="hl-3">&#39;Error changing password:&#39;</span><span class="hl-1">, </span><span class="hl-0">err</span><span class="hl-1">)</span><br/><span class="hl-1"> </span><span class="hl-4">// Do boring stuff :/</span><br/><span class="hl-1">});</span>
+</code></pre>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -133,13 +143,16 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/IProfile.html">IProfile</a>.<a href="../interfaces/IProfile.html#changePassword">changePassword</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L79">api/Profile.ts:79</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L152">src/api/Profile.ts:152</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="createIdentity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>create<wbr/>Identity</span><a href="#createIdentity" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="createIdentity.createIdentity-1">create<wbr/>Identity<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/IIdentity.html" class="tsd-signature-type" data-tsd-kind="Interface">IIdentity</a><span class="tsd-signature-symbol">&gt;</span><a href="#createIdentity.createIdentity-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Creates a new identity with the given name and stores it in this profile.</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-0">profile</span><br/><span class="hl-1">.</span><span class="hl-8">createIdentity</span><span class="hl-1">(</span><span class="hl-3">&quot;myIdentity&quot;</span><span class="hl-1">)</span><br/><span class="hl-1">.</span><span class="hl-8">then</span><span class="hl-1">(</span><span class="hl-0">identity</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">log</span><span class="hl-1">(</span><span class="hl-3">&quot;Identity created:&quot;</span><span class="hl-1">, </span><span class="hl-0">identity</span><span class="hl-1">.</span><span class="hl-0">meta</span><span class="hl-1">.</span><span class="hl-0">name</span><span class="hl-1">);</span><br/><span class="hl-1"> </span><span class="hl-4">// Identity created: myIdentity</span><br/><span class="hl-1">})</span><br/><span class="hl-1">.</span><span class="hl-8">catch</span><span class="hl-1">(</span><span class="hl-0">err</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">error</span><span class="hl-1">(</span><span class="hl-3">&#39;Error creating identity:&#39;</span><span class="hl-1">, </span><span class="hl-0">err</span><span class="hl-1">)</span><br/><span class="hl-1"> </span><span class="hl-4">// Do boring stuff :/</span><br/><span class="hl-1">});</span>
+</code></pre>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -151,13 +164,16 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/IIdentity.html" class="tsd-signature-type" data-tsd-kind="Interface">IIdentity</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/IProfile.html">IProfile</a>.<a href="../interfaces/IProfile.html#createIdentity">createIdentity</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L69">api/Profile.ts:69</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L131">src/api/Profile.ts:131</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="createProfile" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>create<wbr/>Profile</span><a href="#createProfile" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="createProfile.createProfile-1">create<wbr/>Profile<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/ProfileOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ProfileOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#createProfile.createProfile-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Creates a new profile with the given options.</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">profile</span><span class="hl-1"> = </span><span class="hl-6">new</span><span class="hl-1"> </span><span class="hl-8">Profile</span><span class="hl-1">({ </span><span class="hl-0">name:</span><span class="hl-1"> </span><span class="hl-3">&quot;myName&quot;</span><span class="hl-1"> });</span><br/><span class="hl-0">profile</span><br/><span class="hl-1">.</span><span class="hl-8">createProfile</span><span class="hl-1">({ </span><span class="hl-0">password:</span><span class="hl-1"> </span><span class="hl-3">&quot;myPassword&quot;</span><span class="hl-1"> })</span><br/><span class="hl-8">then</span><span class="hl-1">(() </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-4">// Do awesome stuff!</span><br/><span class="hl-1">})</span><br/><span class="hl-1">.</span><span class="hl-8">catch</span><span class="hl-1">(</span><span class="hl-0">err</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">error</span><span class="hl-1">(</span><span class="hl-3">&#39;Error creating profile:&#39;</span><span class="hl-1">, </span><span class="hl-0">err</span><span class="hl-1">)</span><br/><span class="hl-1"> </span><span class="hl-4">// Do boring stuff :/</span><br/><span class="hl-1">});</span>
+</code></pre>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -169,13 +185,16 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/IProfile.html">IProfile</a>.<a href="../interfaces/IProfile.html#createProfile">createProfile</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L42">api/Profile.ts:42</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L65">src/api/Profile.ts:65</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="createWallet" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>create<wbr/>Wallet</span><a href="#createWallet" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="createWallet.createWallet-1">create<wbr/>Wallet<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/IWallet.html" class="tsd-signature-type" data-tsd-kind="Interface">IWallet</a><span class="tsd-signature-symbol">&gt;</span><a href="#createWallet.createWallet-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Creates a new wallet with the given name and stores it in this profile.</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Wallet</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&quot;grams-sdk&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-0">profile</span><br/><span class="hl-1">.</span><span class="hl-8">createWallet</span><span class="hl-1">(</span><span class="hl-3">&quot;myWallet&quot;</span><span class="hl-1">)</span><br/><span class="hl-1">.</span><span class="hl-8">then</span><span class="hl-1">(</span><span class="hl-0">wallet</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">log</span><span class="hl-1">(</span><span class="hl-3">&#39;Created new wallet:&#39;</span><span class="hl-1">, </span><span class="hl-0">wallet</span><span class="hl-1">.</span><span class="hl-0">meta</span><span class="hl-1">.</span><span class="hl-0">name</span><span class="hl-1">);</span><br/><span class="hl-1"> </span><span class="hl-4">// Created new wallet: myWallet</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">log</span><span class="hl-1">(</span><span class="hl-3">&#39;Wallet balance:&#39;</span><span class="hl-1">, </span><span class="hl-0">wallet</span><span class="hl-1">.</span><span class="hl-8">getBalance</span><span class="hl-1">());</span><br/><span class="hl-1"> </span><span class="hl-4">// Wallet balance: 0</span><br/><span class="hl-1">})</span><br/><span class="hl-1">.</span><span class="hl-8">catch</span><span class="hl-1">(</span><span class="hl-0">err</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">error</span><span class="hl-1">(</span><span class="hl-3">&#39;Error creating wallet:&#39;</span><span class="hl-1">, </span><span class="hl-0">err</span><span class="hl-1">)</span><br/><span class="hl-1"> </span><span class="hl-4">// Do boring stuff :/</span><br/><span class="hl-1">});</span>
+</code></pre>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -187,13 +206,16 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/IWallet.html" class="tsd-signature-type" data-tsd-kind="Interface">IWallet</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/IProfile.html">IProfile</a>.<a href="../interfaces/IProfile.html#createWallet">createWallet</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L60">api/Profile.ts:60</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L110">src/api/Profile.ts:110</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="restore" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>restore</span><a href="#restore" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="restore.restore-1">restore<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#restore.restore-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Restores this profile from the given file path and password.</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-0">profile</span><br/><span class="hl-1">.</span><span class="hl-8">restore</span><span class="hl-1">(</span><span class="hl-3">&quot;/path/to/backup&quot;</span><span class="hl-1">, </span><span class="hl-3">&quot;password&quot;</span><span class="hl-1">)</span><br/><span class="hl-1">.</span><span class="hl-8">then</span><span class="hl-1">(() </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-4">// Do awesome stuff!</span><br/><span class="hl-1">})</span><br/><span class="hl-1">.</span><span class="hl-8">catch</span><span class="hl-1">(</span><span class="hl-0">err</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">error</span><span class="hl-1">(</span><span class="hl-3">&#39;Error restoring profile:&#39;</span><span class="hl-1">, </span><span class="hl-0">err</span><span class="hl-1">)</span><br/><span class="hl-1"> </span><span class="hl-4">// Do boring stuff :/</span><br/><span class="hl-1">});</span>
+</code></pre>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -209,13 +231,16 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/IProfile.html">IProfile</a>.<a href="../interfaces/IProfile.html#restore">restore</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L99">api/Profile.ts:99</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L194">src/api/Profile.ts:194</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="unlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>unlock</span><a href="#unlock" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="unlock.unlock-1">unlock<span class="tsd-signature-symbol">(</span>password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#unlock.unlock-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Unlocks the profile with the given password.</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-0">profile</span><br/><span class="hl-1">.</span><span class="hl-8">unlock</span><span class="hl-1">(</span><span class="hl-3">&quot;myPassword&quot;</span><span class="hl-1">)</span><br/><span class="hl-1">.</span><span class="hl-8">then</span><span class="hl-1">(() </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-4">// Do awesome stuff!</span><br/><span class="hl-1">})</span><br/><span class="hl-1">.</span><span class="hl-8">catch</span><span class="hl-1">(</span><span class="hl-0">err</span><span class="hl-1"> </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-8">error</span><span class="hl-1">(</span><span class="hl-3">&#39;Error unlocking profile:&#39;</span><span class="hl-1">, </span><span class="hl-0">err</span><span class="hl-1">)</span><br/><span class="hl-1"> </span><span class="hl-4">// Do boring stuff :/</span><br/><span class="hl-1">});</span>
+</code></pre>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -227,7 +252,7 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/IProfile.html">IProfile</a>.<a href="../interfaces/IProfile.html#unlock">unlock</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/83c1b28/src/api/Profile.ts#L51">api/Profile.ts:51</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/GramsOrg/grams-sdk-node/blob/5fb1e31/src/api/Profile.ts#L85">src/api/Profile.ts:85</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
