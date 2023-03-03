@@ -1,6 +1,9 @@
-import { Address } from "./Address";
-import { Balance } from "./Balance";
-import { Transaction, TransactionOptions } from "./Transaction";
+import { 
+    Address,
+    Balance,
+    Transaction,
+    TransactionOptions
+} from "../";
 
 /**
  * The metadata of a wallet.
@@ -15,6 +18,12 @@ export interface WalletMeta {
 
 /**
  * Represents a Grams wallet.
+ * 
+ * Can be used by importing the wallet from grams-sdk
+ * 
+ * ```
+ * import { Wallet } from "grams-sdk";
+ * ```
  */
 export interface IWallet {
 
@@ -59,7 +68,7 @@ export interface IWallet {
      * @param options - An object containing options to filter and sort the transactions.
      * @returns A promise that resolves to an array of `Transaction` objects.
      */
-    getTransactions(options: TransactionOptions): Promise<Transaction>;
+    getTransactions(options: TransactionOptions): Promise<Transaction[]>;
 
     /**
      * Registers a listener function to be called whenever a transaction is received by the wallet.

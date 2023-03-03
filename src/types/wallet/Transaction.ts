@@ -1,4 +1,4 @@
-import { Address } from "./Address";
+import { Address } from "../";
 
 /**
  * An object containing options to filter and sort transactions.

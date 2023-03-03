@@ -1,6 +1,6 @@
 import { CoinType } from '@iota/wallet';
 import { v4 as uuid } from 'uuid';
-import { ProfileOptions } from '../types/ProfileOptions';
+import { ProfileOptions } from '../types/profile/ProfileOptions';
 import Wallet from './wallet';
 
 class Profile {

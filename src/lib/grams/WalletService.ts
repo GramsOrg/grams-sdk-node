@@ -23,7 +23,7 @@ class WalletService implements IWallet {
     getTransaction(id: string): Promise<Transaction> {
         throw new Error("Method not implemented.");
     }
-    getTransactions(options: TransactionOptions): Promise<Transaction> {
+    getTransactions(options: TransactionOptions): Promise<Transaction[]> {
         throw new Error("Method not implemented.");
     }
     onTransaction(listener: (transaction: Transaction) => void): void {

@@ -5,7 +5,7 @@ import {
     IIdentity,
     IWallet,
     ProfileOptions
-} from '../types/';
+} from '../';
 
 export interface ProfileMeta {
 

@@ -1,6 +1,6 @@
 import WalletAdapter from '../lib/adapter/wallet-adapter';
 
-import { ProfileOptions } from '../types/ProfileOptions';
+import { ProfileOptions } from '../types/profile/ProfileOptions';
 import Profile from './profile';
 
 /**
