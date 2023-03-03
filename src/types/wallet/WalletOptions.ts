@@ -1,3 +1,3 @@
 export interface WalletOptions {
-    nodeUrl?: string;
+  nodeUrl?: string;
 }

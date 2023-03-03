@@ -1,12 +1,8 @@
-import Grams from "./api/Grams";
-import Profile from "./api/Profile";
-import Wallet from "./api/Wallet";
+import Grams from './api/Grams';
+import Profile from './api/Profile';
+import Wallet from './api/Wallet';
 
-export {
-    Grams,
-    Profile,
-    Wallet
-}
+export { Grams, Profile, Wallet };
 export * from './types';
 
 /*

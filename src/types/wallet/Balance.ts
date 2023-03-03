@@ -1,4 +1,4 @@
 export interface Balance {
-    available: string;
-    total: string;
+  available: string;
+  total: string;
 }

@@ -1,4 +1,4 @@
-import Profile from "./Profile";
+import Profile from './Profile';
 
 declare global {
   interface Window {
