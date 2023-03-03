@@ -9,6 +9,7 @@ import {
 } from "@iota/wallet";
 
 import {
+    GramsError,
     IIdentity,
     IProfile,
     IWallet,
@@ -26,7 +27,7 @@ class ProfileService implements IProfile {
 
     private accountManager?: AccountManager;
     private identity?: IIdentity;
-    private wallet?: IWallet;
+    private wallet?: WalletService;
 
     constructor(meta: ProfileMeta, walletService?: IWallet) {
         this.meta = meta;
@@ -51,10 +52,16 @@ class ProfileService implements IProfile {
     }
 
     createWallet(name: string): Promise<IWallet> {
+        if (!this.accountManager) {
+            throw new GramsError(`Profile ${this.meta.name} is not created yet. Create a new profile to create a wallet`);
+        }
+        
         this.wallet = new WalletService({
             name,
         });
-        return this.wallet.create({});
+        return this.wallet.create({
+            accountManager: this.accountManager
+        });
     }
 
     createIdentity(name: string): Promise<IIdentity> {

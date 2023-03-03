@@ -1,6 +1,12 @@
 import {
+    Account,
+    AccountManager,
+    Address as IOTAAddress
+} from "@iota/wallet";
+import {
     Address,
     Balance,
+    GramsError,
     IWallet,
     Transaction,
     TransactionOptions,
@@ -8,27 +14,57 @@ import {
     WalletOptions
 } from "../../types";
 
+export interface GramsWalletOptions extends WalletOptions {
+    accountManager: AccountManager;
+}
+
 class WalletService implements IWallet {
+
     meta: WalletMeta;
 
-    /**
-     * Creates an empty profile with a given name.
-     *
-     * @param name - The profile name.
-     */
+    account?: Account;
+
+    address?: Address;
+
     constructor(meta: WalletMeta) {
         this.meta = meta;
     }
-    
-    create(options: WalletOptions): Promise<IWallet> {
-        throw new Error("Method not implemented.");
+
+    create(options: GramsWalletOptions): Promise<IWallet> {
+        return options.accountManager
+        .createAccount({ alias: this.meta.name })
+        .then(account => {
+            this.account = account;
+            return account;
+        })
+        .then(account => account.generateAddress())
+        .then(address => {
+            this.address = address;
+            return this;
+        });
     }
 
     getBalance(): Promise<Balance> {
-        throw new Error("Method not implemented.");
+        if (!this.account) {
+            throw new GramsError("Wallet not initialized, create the wallet to be able to get the balance");
+        }
+
+        return this.account
+        .sync()
+        .then(balance => {
+            return {
+                available: balance.baseCoin.available,
+                total: balance.baseCoin.total
+            }
+        });
     }
+
     getAddress(): Promise<Address> {
-        throw new Error("Method not implemented.");
+        if (!this.address) {
+            throw new GramsError("Wallet not initialized, create the wallet to be able to get the balance");
+        }
+
+        return Promise.resolve(this.address);
     }
     sendTransaction(transaction: Transaction): Promise<void> {
         throw new Error("Method not implemented.");
