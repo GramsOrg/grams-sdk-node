@@ -20,7 +20,6 @@ export interface WalletMeta {
  * ```
  */
 export interface IWallet {
-
   /**
    * The metadata of a wallet.
    */
