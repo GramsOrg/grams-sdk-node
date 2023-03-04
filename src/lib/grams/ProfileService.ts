@@ -48,19 +48,19 @@ class ProfileService implements IProfile {
     let current = this.wallets?.get(name);
 
     if (current) {
-        return Promise.resolve(current);
+      return Promise.resolve(current);
     }
 
     current = new WalletService({ name });
-    
+
     return current
-    .create({
-      accountManager: this.accountManager,
-    })
-    .then(created => {
+      .create({
+        accountManager: this.accountManager,
+      })
+      .then((created) => {
         this.wallets.set(name, created);
         return created;
-    });
+      });
   }
 
   identity(name: string): Promise<IIdentity> {

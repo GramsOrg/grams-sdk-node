@@ -1,4 +1,4 @@
-import { Address, Balance, Transaction, TransactionOptions, WalletOptions } from '../';
+import { Address, Balance, Collectible, Foundry, Token, Transaction, TransactionOptions, WalletOptions } from '../';
 
 /**
  * The metadata of a wallet.
@@ -20,6 +20,7 @@ export interface WalletMeta {
  * ```
  */
 export interface IWallet {
+
   /**
    * The metadata of a wallet.
    */
@@ -54,6 +55,35 @@ export interface IWallet {
    * @returns A promise that resolves once the transaction has been sent.
    */
   send(transaction: Transaction): Promise<void>;
+
+  /**
+   * Sends a signed transaction from the wallet.
+   *
+   * @param transaction - The `Transaction` object representing the transaction to send.
+   * @returns A promise that resolves once the transaction has been sent.
+   */
+  sign(transaction: Transaction): Promise<void>;
+
+  /**
+   * Returns the tokens available in the wallet.
+   *
+   * @returns A promise that resolves once the list of tokens owned.
+   */
+  tokens(): Promise<Token[]>;
+
+  /**
+   * Returns the NFTs available in the wallet.
+   *
+   * @returns A promise that resolves once the list of collectibles owned.
+   */
+  collectibles(): Promise<Collectible[]>;
+
+  /**
+   * Returns the foundries created by the wallet.
+   *
+   * @returns A promise that resolves once the list of foundries owned.
+   */
+  foundries(): Promise<Foundry[]>;
 
   /**
    * Gets a transaction by its ID.

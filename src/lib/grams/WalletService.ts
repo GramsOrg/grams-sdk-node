@@ -2,8 +2,11 @@ import { Account, AccountManager, Address as IOTAAddress } from '@iota/wallet';
 import {
   Address,
   Balance,
+  Collectible,
+  Foundry,
   GramsError,
   IWallet,
+  Token,
   Transaction,
   TransactionOptions,
   WalletMeta,
@@ -15,7 +18,6 @@ export interface GramsWalletOptions extends WalletOptions {
 }
 
 class WalletService implements IWallet {
-
   meta: WalletMeta;
 
   private account?: Account;
@@ -61,6 +63,18 @@ class WalletService implements IWallet {
     return Promise.resolve(this.accountAddress);
   }
   send(transaction: Transaction): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
+  sign(transaction: Transaction): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
+  tokens(): Promise<Token[]> {
+    throw new Error('Method not implemented.');
+  }
+  collectibles(): Promise<Collectible[]> {
+    throw new Error('Method not implemented.');
+  }
+  foundries(): Promise<Foundry[]> {
     throw new Error('Method not implemented.');
   }
   transaction(id: string): Promise<Transaction> {

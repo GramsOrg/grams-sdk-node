@@ -1,5 +1,16 @@
 import WalletService from '../lib/grams/WalletService';
-import { Address, Balance, IWallet, Transaction, TransactionOptions, WalletMeta, WalletOptions } from '../types';
+import {
+  Address,
+  Balance,
+  Collectible,
+  Foundry,
+  IWallet,
+  Token,
+  Transaction,
+  TransactionOptions,
+  WalletMeta,
+  WalletOptions,
+} from '../types';
 
 /**
  * A Grams wallet, which holds the user's address and balance.
@@ -89,7 +100,7 @@ class Wallet implements IWallet {
    * const tx = new Transaction("0x1234567890CDF...", "0x98765432EDCBA...", 1000);
    * wallet
    * .send(tx)
-   * then(() => {
+   * .then(() => {
    *  // Do awesome stuff!
    * })
    * .catch(err => {
@@ -99,6 +110,35 @@ class Wallet implements IWallet {
    */
   send(transaction: Transaction): Promise<void> {
     return this.service.send(transaction);
+  }
+
+  /**
+   * Sends a signed transaction from the wallet.
+   * @param transaction - The transaction to send.
+   * @returns A Promise that resolves when the transaction has been sent successfully.
+   * @example
+   * const tx = new Transaction("0x1234567890CDF...", "0x98765432EDCBA...", 1000);
+   * wallet
+   * .sign(tx)
+   * .then(() => {
+   *  // Do awesome stuff!
+   * })
+   * .catch(err => {
+   *  console.error('Error sending transaction:', err)
+   *  // Do boring stuff :/
+   * });
+   */
+  sign(transaction: Transaction): Promise<void> {
+    return this.service.sign(transaction);
+  }
+  tokens(): Promise<Token[]> {
+    throw new Error('Method not implemented.');
+  }
+  collectibles(): Promise<Collectible[]> {
+    throw new Error('Method not implemented.');
+  }
+  foundries(): Promise<Foundry[]> {
+    throw new Error('Method not implemented.');
   }
 
   /**
@@ -134,7 +174,7 @@ class Wallet implements IWallet {
    * };
    * wallet
    * .transactions(options)
-   * then(txs => {
+   * .then(txs => {
    *  console.log(txs.length);
    *  // 5
    * })
